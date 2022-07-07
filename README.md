@@ -152,4 +152,4 @@ https://react.docschina.org/
 根据你们之前的后台作业，
 使用 react + ant-design@4 实现一套包含了 增/删/改/查 功能的后台前端管理界面。
 
-邮箱： wang.xx@vivebest.com
+作业发送到邮箱： wang.xx@vivebest.com
