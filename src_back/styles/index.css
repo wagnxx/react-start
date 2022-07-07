@@ -1,0 +1,46 @@
+/* 
+// settings@import "globals";@import "branding";
+// tools@import "mixins";
+// generic@import "normalize";
+// elements@import "fonts";@import "form";
+// objects@import "grid";@import "wrappers";
+// components@import "header";@import "sidebar";@import "carousel";@import "card";
+// trumps@import "overrides";
+
+*/
+/* settings */
+--root{
+  --font-size-basic:              14px;
+  --font-size-main:               val(----font-size-basic);
+  --font-color-main:            #666;
+
+  --nav-gap:                      20px;
+
+
+}
+
+
+/* // tools@import "mixins"; */
+/* // generic@import "normalize"; */
+
+/* // elements@import "fonts";@import "form"; */
+
+h1{
+  font-size: calc(val(--font-size-basic) * 3);
+}
+h2{
+  font-size: calc(val(--font-size-basic) * 2);
+}
+h3{
+  font-size: calc(val(--font-size-basic) * 1.5);
+}
+
+
+/* // objects@import "grid";@import "wrappers";  eddit in component file */
+
+
+/* // trumps@import "overrides"; */
+
+h1.min{
+  font-size: calc(val(--font-size-basic) * 2.5) !important;
+}

@@ -1,70 +1,153 @@
-# Getting Started with Create React App
+# React hooks
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### note
+一. react预备前知识
+1. css
+```
+itcss layer:
 
-## Available Scripts
+// settings@import "globals";@import "branding";
+// tools@import "mixins";
+// generic@import "normalize";
+// elements@import "fonts";@import "form";
+// objects@import "grid";@import "wrappers";
+// components@import "header";@import "sidebar";@import "carousel";@import "card";
+// trumps@import "overrides";
+```
+2. js
 
-In the project directory, you can run:
+React - the React top level API
+React DOM - adds DOM-specific methods
+Babel - a JavaScript compiler that lets us use ES6+ in old browsers
 
-### `npm start`
+二. react基础知识
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. 语法
+- jsx
+With JSX, we can write what looks like HTML, and also we can create and use our own XML-like tags. Here's what JSX looks like assigned to a variable.
+```js
+const el = <div>react el</div>
+const heading = <h1 className="site-heading">Hello, React</h1>
+const heading = React.createElement('h1', {className: 'site-heading'}, 'Hello, React!')
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+// JavaScript expressions can also be embedded inside JSX using curly braces, including variables, functions, and properties.
+const name = 'Tania'
+const heading = <h1>Hello, {name}</h1>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
 
-### `npm run build`
+2 组件
+  + 函数
+```js
+const SimpleComponent = () => {
+  return <div>Example</div>
+}
+```
+  + class
+```js
+import React, {Component} from 'react'
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <h1>Hello, React!</h1>
+      </div>
+    )
+  }
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+export default App
+```
+  + 内部组件
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. 状态
+- state
+- props
 
-### `npm run eject`
+```js
+class App extends Component {
+  render() {
+    const characters = [
+      {
+        name: 'Charlie',
+        job: 'Janitor',
+      },
+      {
+        name: 'Mac',
+        job: 'Bouncer',
+      },
+      {
+        name: 'Dee',
+        job: 'Aspring actress',
+      },
+      {
+        name: 'Dennis',
+        job: 'Bartender',
+      },
+    ]
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    return (
+      <div className="container">
+        <Table />
+      </div>
+    )
+  }
+}
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+return (
+  <div className="container">
+    <Table characterData={characters} />
+  </div>
+)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
 
-## Learn More
+4. 事件
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. 条件处理
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+6. 循环渲染
 
-### Code Splitting
+7. 生命周期（见图）
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+8. 组件Api （setState，hooks）
 
-### Analyzing the Bundle Size
+9. ajax请求
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://www.runoob.com/react/react-tutorial.html
+https://react.docschina.org/
+
+
+
+
+
+三. 作业
+
+根据你们之前的后台作业，
+使用 react + ant-design@4 实现一套包含了 增/删/改/查 功能的后台前端管理界面。
